@@ -1,0 +1,167 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPaje.master.cs" Inherits="projectMeytal.masterPaje" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        .icon{width:100px;}
+    </style>
+    <script>
+        function myTimer()
+        {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("myTime").innerHTML = t;
+        }
+        setInterval("myTimer()", 1000);
+
+        function showIcon(icName,icPic)
+        {
+            icName.src = icPic;
+        }
+        
+
+  
+        
+    </script>
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+ <body>
+    <table>
+        <tr>
+            <td class = "header">
+                <table>
+                    <tr>
+                        <td class="hRight" style ="text-align:center"> 
+                            <%= loginMsg %>
+                        <br />
+                        <% if (Session["uFName"].ToString() == "אורח")
+                            {%>
+                            <a href="InsertUser.aspx"> 
+                            <img  class="icon"  src="pics/Rrishom1.png" 
+                                id="InsertUser"
+                            onmouseover="showIcon(InsertUser,'pics/Rrishom2.png')"
+                             onmouseout="showIcon(InsertUser, 'pics/Rrishom1.png')" 
+                              /></a>
+                            <a href="login.aspx"> 
+                            <img   class="icon"   src="pics/Rittchber1.png"
+                               id="login"
+                            onmouseover="showIcon(login,'pics/Rittchber2.png')"
+                             onmouseout="showIcon(login,'pics/Rittchber1.png')"
+                                /></a>
+
+                        <%}
+                            else
+                            if (Session["uFName"].ToString() == "מנהל")
+                            {%> 
+                            <a href="logoff.aspx">
+                            <img class="icon" src="pics/Ritnatak1.png"
+                                  id="logoff2"
+                            onmouseover="showIcon(logoff2,'pics/Ritnatak2.png')"
+                             onmouseout="showIcon(logoff2,'pics/Ritnatak1.png')"
+                                /></a>
+                          <%}
+                              else
+                              {%> 
+                             <a href="logoff.aspx">
+                             <img class="icon" src="pics/Ritnatak1.png"
+                                  id="logoff"
+                            onmouseover="showIcon(logoff,'pics/Ritnatak2.png')"
+                             onmouseout="showIcon(logoff,'pics/Ritnatak1.png')"
+                                /></a>
+                            <% } %>
+                                
+                                
+                        </td>
+                           
+                         <td class="hCenter"><img src="pics/koterat.png" /></td>
+                         <td class="hLeft" style ="text-align:center"><h2 id="myTime"></h2></td>
+                    </tr>
+                </table>
+            </td>
+            
+        </tr>
+         <tr>
+            <td class = "menu" style="text-align:center;">
+                <a href="homepage.aspx">
+                <img class="icon" src="pics/RdafAbit1.png" 
+                 id="homepage"
+                    onmouseover="showIcon(homepage,'pics/RdafAbit2.png')"
+                    onmouseout="showIcon(homepage,'pics/RdafAbit1.png')"
+                  /></a>
+
+                <a href="akdama.aspx"> 
+                <img  class="icon" src="pics/Rmaida1.png" 
+                 id="akdama"
+                    onmouseover="showIcon(akdama,'pics/Rmaida2.png')"
+                    onmouseout="showIcon(akdama,'pics/Rmaida1.png')"
+                        /></a>
+
+                <a href="galerya.aspx">
+                <img class="icon" src="pics/Rgalrya1.png" 
+                    id="galerya"
+                    onmouseover="showIcon(galerya,'pics/Rgalrya2.png')"
+                    onmouseout="showIcon(galerya,'pics/Rgalrya1.png')"
+                    /></a>
+               
+                <a href="loginMenager.aspx">
+                    <img class="icon" src="pics/RknisatMnal1.png" 
+                      id="loginMenager"
+                    onmouseover="showIcon(loginMenager,'pics/RknisatMnal2.png')"
+                    onmouseout="showIcon(loginMenager,'pics/RknisatMnal1.png')"  
+                        /></a>
+
+              <% if(Session["uFName"].ToString()=="מנהל")
+                  {%>
+                <a href="showTable.aspx">
+                
+                 <img class="icon" src="pics/RazagatAtavla1.png" 
+                 id ="showTable"
+                    onmouseover="showIcon(showTable,'pics/RazagatAtavla2.png' )"
+                    onmouseout="showIcon(showTable,'pics/RazagatAtavla1.png' )"
+                     /></a>
+
+                <a href="simpleQry.aspx"> 
+                <img class="icon" src="pics/RshailtaPshota1.png" 
+                 id ="simpleQry"
+                    onmouseover="showIcon(simpleQry,'pics/RshailtaPshota2.png' )"
+                    onmouseout="showIcon(simpleQry,'pics/RshailtaPshota1.png' )"
+                   /></a>
+
+                <a href="complxQry.aspx">
+                <img class="icon" src="pics/RshailtaMorkavt1.png" 
+                id ="complxQry"
+                    onmouseover="showIcon(complxQry,'pics/RshailtaMorkavt2.png' )"
+                    onmouseout="showIcon(complxQry,'pics/RshailtaMorkavt1.png' )"
+                    /></a>
+
+                <a href="delete.aspx"> 
+                <img class="icon" src="pics/RmachikatMshtamesh1.png"
+                id ="delete"
+                    onmouseover="showIcon(delete,'pics/RmachikatMshtamesh2.png')"
+                    onmouseout="showIcon(delete,'pics/RmachikatMshtamesh1.png')"
+                           /></a>
+                  <% }%>
+                            
+            </td>
+        </tr>
+         <tr>
+            <td class = "main"> 
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder></td>
+        </tr>
+         <tr>
+            <td class = "footer">
+                <h3 style="text-align:center;">כל הזכויות שמורות</h3>
+            </td>
+        </tr>
+    </table>
+           
+</body>
+
+</html>
