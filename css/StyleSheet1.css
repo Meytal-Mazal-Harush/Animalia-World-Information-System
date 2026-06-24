@@ -1,0 +1,43 @@
+﻿body {
+    direction: rtl;
+    background-color: moccasin;
+    margin: 0 auto;
+}
+
+table {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+}
+
+.meun {
+    width: 100%;
+    height: 40px;
+}
+
+.main {
+    width: 100%;
+    height: 650px;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+}
+
+.hRight {
+    width: 15%;
+}
+
+.hCenter {
+    width: 70%;
+}
+
+.hLeft {
+    width: 15%;
+}
+ 
