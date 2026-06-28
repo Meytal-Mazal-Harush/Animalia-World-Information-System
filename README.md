@@ -20,4 +20,4 @@ A dynamic, data-driven web encyclopedia dedicated to showcasing global animal ca
 
 * **Backend / Server-Side:** C# (.NET Framework, ASP.NET Web Forms - `.aspx`)
 * **Database:** SQL (Relational queries and data binding)
-* **Frontend / Client-Side:** HTML5, CSS3, JavaScript (Dynamic DOM manipulation for conditional search fields)
+* **Frontend / Client-Side:** HTML, JavaScript (Dynamic DOM manipulation for conditional search fields)
